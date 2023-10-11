@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <padding android:left="8dp" android:top="8dp" 
+        android:right="8dp" android:bottom="8dp" /> 
+
+    <stroke android:width="1.5dp" android:color="@color/accentColor"/>
+    <solid android:color="@color/white"/>
+    <corners android:radius="7dp"/>
+    <!--<solid android:color="#ff0000" />-->
+</shape>
+
+<!--
+<EditText
+android:layout_height="wrap_content"
+android:layout_width="wrap_content"
+android:ems="10"
+android:layout_marginBottom="20dp"
+android:hint="Product name ..."
+android:textCursorDrawable="@drawable/cursor"
+android:backgroundTint="@color/accentColor"
+android:id="@+id/edittext_name"/>
+-->
+

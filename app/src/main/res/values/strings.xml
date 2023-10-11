@@ -1,0 +1,205 @@
+<resources>
+    <string name="app_name">Task1UnitConverter</string>
+    <string name="title">Unit Converter</string>
+    <string name="category">Unit Category</string>
+    <string name="from">From Unit</string>
+    <string name="to">To Unit</string>
+    <string name="btn">Convert</string>
+
+    <string name="title_description">Title for Unit Converter</string>
+    <string name="unit_category_description">Choose unit Category</string>
+    <string name="unit_from_description">From unit</string>
+    <string name="unit_to_description">To unit</string>
+    <string name="convert_btn_description">Convert Button</string>
+    <string name="input_area_initial_val">00.0</string>
+
+    <string-array name="category">
+        <item>Area</item>
+        <item>Data Transfer Rate</item>
+        <item>Digital Storage</item>
+        <item>Energy</item>
+        <item>Frequency</item>
+        <item>Fuel Economy</item>
+        <item>Length</item>
+        <item>Mass</item>
+        <item>Plane Angle</item>
+        <item>Pressure</item>
+        <item>Speed</item>
+        <item>Temperature</item>
+        <item>Time</item>
+        <item>Volume</item>
+    </string-array>
+
+    <string-array name="area">
+        <item>Square Kilometer</item>
+        <item>Square Meter</item> <!-- Base -->
+        <item>Square Mile</item>
+        <item>Square Yard</item>
+        <item>Square Foot</item>
+        <item>Square Inch</item>
+        <item>Hectare</item>
+        <item>Acre</item>
+    </string-array>
+
+    <string-array name="data_transfer_rate">
+        <item>Bit per Second</item> <!-- Base -->
+        <item>Kilobit per second</item>
+        <item>Kilobyte per second</item>
+        <item>Kibibit per second</item>
+        <item>Megabit per second</item>
+        <item>Megabyte per second</item>
+        <item>Mebibit per second</item>
+        <item>Gigabit per second</item>
+        <item>Gigabyte per second</item>
+        <item>Gebibit per second</item>
+        <item>Terabit per second</item>
+        <item>Terabyte per second</item>
+        <item>Tebibit per second</item>
+    </string-array>
+
+    <string-array name="digital_storage">
+        <item>Bit</item> <!-- Base -->
+        <item>Kilobit</item>
+        <item>Kibibit</item>
+        <item>Megabit</item>
+        <item>Mebibit</item>
+        <item>Gigabit</item>
+        <item>Gibibit</item>
+        <item>Terabit</item>
+        <item>Petabit</item>
+        <item>Pebibit</item>
+        <item>Byte</item>
+        <item>Kilobyte</item>
+        <item>Kibibyte</item>
+        <item>Megabyte</item>
+        <item>Mebibyte</item>
+        <item>Gigabyte</item>
+        <item>Gibibyte</item>
+        <item>Terabyte</item>
+        <item>Tebibyte</item>
+        <item>Petabyte</item>
+        <item>Pebibyte</item>
+    </string-array>
+
+    <string-array name="energy">
+        <item>Joule</item> <!-- Base -->
+        <item>Kilojoule</item>
+        <item>Gram calorie</item>
+        <item>Kilo calorie</item>
+        <item>Watt hour</item>
+        <item>Kilowatt hour</item>
+        <item>Electronvolt</item>
+        <item>British thermal unit</item>
+        <item>US therm</item>
+        <item>Foot-pound</item>
+    </string-array>
+
+    <string-array name="frequency">
+        <item>Hertz</item> <!-- Base -->
+        <item>kilohertz</item>
+        <item>Megahertz</item>
+        <item>Gigahertz</item>
+    </string-array>
+
+    <string-array name="fuel_economy">
+        <item>Miles per gallon</item>
+        <item>Miles per gallon (Imperial)</item>
+        <item>Kilometer per liter</item>
+        <item>Liter per 100 kilometer</item> <!-- Base -->
+    </string-array>
+
+    <string-array name="length">
+        <item>Kilometre</item>
+        <item>Meter</item> <!-- Base -->
+        <item>Centimeter</item>
+        <item>Millimetre</item>
+        <item>Micrometre</item>
+        <item>Nanometre</item>
+        <item>Mile</item>
+        <item>Yard</item>
+        <item>Foot</item>
+        <item>Inch</item>
+        <item>Nautical Mile</item>
+    </string-array>
+
+    <string-array name="mass">
+        <item>Tonne</item>
+        <item>Kilogram</item>
+        <item>Gram</item> <!-- Base -->
+        <item>Milligram</item>
+        <item>Micrograms</item>
+        <item>Imperial ton</item>
+        <item>US ton</item>
+        <item>Stone</item>
+        <item>Pound</item>
+        <item>Ounce</item>
+    </string-array>
+
+    <string-array name="plane_angle">
+        <item>Arcsecond</item>
+        <item>Degree</item>
+        <item>Gradian</item>
+        <item>Milliradian</item>
+        <item>Minute of arc</item>
+        <item>Radian</item> <!-- Base -->
+    </string-array>
+
+    <string-array name="pressure">
+        <item>Bar</item>
+        <item>Pascal</item> <!-- Base -->
+        <item>Pound per square inch</item>
+        <item>Standard atmosphere</item>
+        <item>Torr</item>
+    </string-array>
+
+    <string-array name="speed">
+        <item>Mile per hour</item>
+        <item>Foot per second</item>
+        <item>Meter per second</item> <!-- Base -->
+        <item>Kilometer per hour</item>
+        <item>Knot</item>
+    </string-array>
+
+    <string-array name="temperature">
+        <item>Degree Celsius</item> <!-- Base -->
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+
+    <string-array name="time">
+        <item>Nanosecond</item>
+        <item>Microsecond</item>
+        <item>Millisecond</item>
+        <item>Second</item> <!-- Base -->
+        <item>Minute</item>
+        <item>Hour</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Calendar Year</item>
+        <item>Decade</item>
+        <item>Century</item>
+    </string-array>
+
+    <string-array name="volume">
+        <item>US liquid gallon</item>
+        <item>US liquid quart</item>
+        <item>US liquid pint</item>
+        <item>US legal cup</item>
+        <item>Fluid ounce</item>
+        <item>US tablespoon</item>
+        <item>US teaspoon</item>
+        <item>Cubic meter</item> <!-- Base -->
+        <item>Liter</item>
+        <item>Milliliter</item>
+        <item>Imperial gallon</item>
+        <item>Imperial quart</item>
+        <item>Imperial pint</item>
+        <item>Imperial cup</item>
+        <item>Imp. fluid ounce</item>
+        <item>Imperial tablespoon</item>
+        <item>Imperial teaspoon</item>
+        <item>Cubic foot</item>
+        <item>Cubic Inch</item>
+    </string-array>
+</resources>

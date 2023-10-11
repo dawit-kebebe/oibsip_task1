@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="saffron">#e6c229</color>
+    <color name="rich_black">#0d1821</color>
+    <color name="indigo_dye">#344966</color>
+    <color name="lavender_pink">#e6aace</color>
+    <color name="light_coral">#f67e7d</color>
+    <color name="accentColor">#A60A27</color>
+    <color name="white">#FFFFFF</color>
+</resources>
