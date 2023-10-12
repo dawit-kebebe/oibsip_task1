@@ -15,6 +15,7 @@ However we have done our best to eliminate these conversion errors these errors 
 
 ## Output Screenshots and Videos
 
-|![Task 1 Demonstration Screenshot](./screenshots/demo1.png)|![Task 1 Demonstration Screenshot](./screenshots/demo2.png)|
-|--|--|
+![Task 1 Demonstration Screenshot](./screenshots/demo1.png)
+![Task 1 Demonstration Screenshot](./screenshots/demo2.png)
+--
 ![Task 1 Demonstration Screencast](./screenshots/videodemo.png)    
