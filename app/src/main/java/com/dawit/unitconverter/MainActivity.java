@@ -146,14 +146,12 @@ public class MainActivity extends AppCompatActivity {
 
     private TextInputEditText textInputEditTextUnitFrom;
     private TextInputEditText textInputEditTextUnitTo;
-    private Spinner categorySpinner;
     private Spinner fromSpinner;
     private Spinner toSpinner;
 
     private ArrayAdapter<CharSequence>
-            toUnitSpinnerArrayAdapter,
-            fromUnitSpinnerAdapter,
-            categorySpinnerArrayAdapter;
+            toUnitSpinnerArrayAdapter;
+    private ArrayAdapter<CharSequence> fromUnitSpinnerAdapter;
 
     IConversion fromUnitObject, toUnitObject;
 
@@ -162,11 +160,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textInputEditTextUnitFrom = (TextInputEditText) findViewById(R.id.unit_from_in);
-        textInputEditTextUnitTo = (TextInputEditText) findViewById(R.id.unit_to_out);
-        categorySpinner = (Spinner) findViewById(R.id.category);
+        textInputEditTextUnitFrom = findViewById(R.id.unit_from_in);
+        textInputEditTextUnitTo = findViewById(R.id.unit_to_out);
+        Spinner categorySpinner = findViewById(R.id.category);
 
-        categorySpinnerArrayAdapter = ArrayAdapter.createFromResource(
+        ArrayAdapter<CharSequence> categorySpinnerArrayAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.category,
                 android.R.layout.simple_spinner_item
@@ -187,11 +185,11 @@ public class MainActivity extends AppCompatActivity {
         categorySpinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(categorySpinnerArrayAdapter);
 
-        fromSpinner = (Spinner) findViewById(R.id.unit_from);
+        fromSpinner = findViewById(R.id.unit_from);
         fromUnitSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fromSpinner.setAdapter(fromUnitSpinnerAdapter);
 
-        toSpinner = (Spinner) findViewById(R.id.unit_to);
+        toSpinner = findViewById(R.id.unit_to);
         toUnitSpinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         toSpinner.setAdapter(toUnitSpinnerArrayAdapter);
 
@@ -599,9 +597,9 @@ public class MainActivity extends AppCompatActivity {
                 return new KiloMeterPerLiter();
             case "Liter per 100 kilometer":
                 return new LiterPer100Kilometer();
-/**
- * Length Case checking
- */
+
+//Length Case checking
+
             case "Kilometre":
                 return new Kilometer();
             case "Meter ":
@@ -624,9 +622,9 @@ public class MainActivity extends AppCompatActivity {
                 return new Inch();
             case "Nautical Mile":
                 return new NauticalMile();
-/**
- * Mass case checking
- */
+
+ // Mass case checking
+
             case "Tonne":
                 return new Tonne();
             case "Kilogram":
