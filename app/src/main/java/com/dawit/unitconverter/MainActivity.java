@@ -5,26 +5,142 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
+import com.dawit.unitconverter.Frequency.GigaHertz;
+import com.dawit.unitconverter.Frequency.Hertz;
+import com.dawit.unitconverter.Frequency.KiloHertz;
+import com.dawit.unitconverter.Frequency.MegaHertz;
+import com.dawit.unitconverter.area.Acre;
+import com.dawit.unitconverter.area.Hectare;
+import com.dawit.unitconverter.area.SquareFoot;
+import com.dawit.unitconverter.area.SquareInch;
+import com.dawit.unitconverter.area.SquareKilometer;
+import com.dawit.unitconverter.area.SquareMeter;
+import com.dawit.unitconverter.area.SquareMile;
+import com.dawit.unitconverter.area.SquareYard;
+import com.dawit.unitconverter.data_transfer_rate.BitPerSecond;
+import com.dawit.unitconverter.data_transfer_rate.GebibitPerSecond;
+import com.dawit.unitconverter.data_transfer_rate.GigabitPerSecond;
+import com.dawit.unitconverter.data_transfer_rate.GigabytePerSecond;
+import com.dawit.unitconverter.data_transfer_rate.KibibitPerSecond;
+import com.dawit.unitconverter.data_transfer_rate.KilobitPerSecond;
+import com.dawit.unitconverter.data_transfer_rate.KilobytePerSecond;
+import com.dawit.unitconverter.data_transfer_rate.MebibitPerSecond;
+import com.dawit.unitconverter.data_transfer_rate.MegabitPersecond;
+import com.dawit.unitconverter.data_transfer_rate.MegabytePerSecond;
+import com.dawit.unitconverter.data_transfer_rate.TebibitPerSecond;
+import com.dawit.unitconverter.data_transfer_rate.TerabitPerSecond;
+import com.dawit.unitconverter.data_transfer_rate.TerabytePerSecond;
+import com.dawit.unitconverter.digital_storage.Bit;
+import com.dawit.unitconverter.digital_storage.Gibibit;
+import com.dawit.unitconverter.digital_storage.Gibibyte;
+import com.dawit.unitconverter.digital_storage.Gigabit;
+import com.dawit.unitconverter.digital_storage.Gigabyte;
+import com.dawit.unitconverter.digital_storage.Kibibit;
+import com.dawit.unitconverter.digital_storage.Kibibyte;
+import com.dawit.unitconverter.digital_storage.Kilobit;
+import com.dawit.unitconverter.digital_storage.Kilobyte;
+import com.dawit.unitconverter.digital_storage.Mebibit;
+import com.dawit.unitconverter.digital_storage.Mebibyte;
+import com.dawit.unitconverter.digital_storage.Megabit;
+import com.dawit.unitconverter.digital_storage.Megabyte;
+import com.dawit.unitconverter.digital_storage.Pebibit;
+import com.dawit.unitconverter.digital_storage.Pebibyte;
+import com.dawit.unitconverter.digital_storage.Petabit;
+import com.dawit.unitconverter.digital_storage.Petabyte;
+import com.dawit.unitconverter.digital_storage.Tebibyte;
+import com.dawit.unitconverter.digital_storage.Terabit;
+import com.dawit.unitconverter.digital_storage.Terabyte;
+import com.dawit.unitconverter.energy.BritishTermalUnit;
+import com.dawit.unitconverter.energy.ElectronVolt;
+import com.dawit.unitconverter.energy.FootPound;
+import com.dawit.unitconverter.energy.GramCalorie;
+import com.dawit.unitconverter.energy.Joule;
+import com.dawit.unitconverter.energy.KiloCalorie;
+import com.dawit.unitconverter.energy.KiloWattHour;
+import com.dawit.unitconverter.energy.Kilojoule;
+import com.dawit.unitconverter.energy.UsTherm;
+import com.dawit.unitconverter.energy.WattHour;
+import com.dawit.unitconverter.fuel_economy.KiloMeterPerLiter;
+import com.dawit.unitconverter.fuel_economy.LiterPer100Kilometer;
+import com.dawit.unitconverter.fuel_economy.MilesPerGallon;
+import com.dawit.unitconverter.fuel_economy.MilesPerGallon_Imperial;
 import com.dawit.unitconverter.length.Centimeter;
 import com.dawit.unitconverter.length.Foot;
 import com.dawit.unitconverter.length.Inch;
 import com.dawit.unitconverter.length.Kilometer;
-import com.dawit.unitconverter.length.Micrometre;
+import com.dawit.unitconverter.length.Meter;
+import com.dawit.unitconverter.length.Micrometer;
 import com.dawit.unitconverter.length.Mile;
-import com.dawit.unitconverter.length.Millimetre;
-import com.dawit.unitconverter.length.Nanometre;
+import com.dawit.unitconverter.length.Milimeter;
+import com.dawit.unitconverter.length.Nanometer;
 import com.dawit.unitconverter.length.NauticalMile;
 import com.dawit.unitconverter.length.Yard;
+import com.dawit.unitconverter.mass.Gram;
+import com.dawit.unitconverter.mass.ImperialTon;
+import com.dawit.unitconverter.mass.KiloGram;
+import com.dawit.unitconverter.mass.Microgram;
+import com.dawit.unitconverter.mass.Miligram;
+import com.dawit.unitconverter.mass.Ounce;
+import com.dawit.unitconverter.mass.Pound;
+import com.dawit.unitconverter.mass.Stone;
+import com.dawit.unitconverter.mass.Tonne;
+import com.dawit.unitconverter.mass.UsTon;
+import com.dawit.unitconverter.plane_angle.Arcsecond;
+import com.dawit.unitconverter.plane_angle.Degree;
+import com.dawit.unitconverter.plane_angle.Gradian;
+import com.dawit.unitconverter.plane_angle.MilliRadian;
+import com.dawit.unitconverter.plane_angle.MinuteOfArc;
+import com.dawit.unitconverter.plane_angle.Radian;
+import com.dawit.unitconverter.pressure.Bar;
+import com.dawit.unitconverter.pressure.Pascal;
+import com.dawit.unitconverter.pressure.PoundPerSquareInch;
+import com.dawit.unitconverter.pressure.StandardAtmosphere;
+import com.dawit.unitconverter.pressure.Torr;
+import com.dawit.unitconverter.speed.FootPerSecond;
+import com.dawit.unitconverter.speed.KilometerPerHour;
+import com.dawit.unitconverter.speed.Knot;
+import com.dawit.unitconverter.speed.MeterPerSecond;
+import com.dawit.unitconverter.speed.MilePerHour;
+import com.dawit.unitconverter.temprature.DegreeCelsius;
+import com.dawit.unitconverter.temprature.Fahrenhiet;
+import com.dawit.unitconverter.temprature.Kelvin;
+import com.dawit.unitconverter.time.CalenderYear;
+import com.dawit.unitconverter.time.Century;
+import com.dawit.unitconverter.time.Day;
+import com.dawit.unitconverter.time.Decade;
+import com.dawit.unitconverter.time.Hour;
+import com.dawit.unitconverter.time.MicroSecond;
+import com.dawit.unitconverter.time.MilliSecond;
+import com.dawit.unitconverter.time.Minute;
+import com.dawit.unitconverter.time.Month;
+import com.dawit.unitconverter.time.NanoSecond;
+import com.dawit.unitconverter.time.Second;
+import com.dawit.unitconverter.time.Week;
+import com.dawit.unitconverter.volume.CubicFoot;
+import com.dawit.unitconverter.volume.CubicInch;
+import com.dawit.unitconverter.volume.CubicMeter;
+import com.dawit.unitconverter.volume.FluidOunce;
+import com.dawit.unitconverter.volume.Imp_FluidOunce;
+import com.dawit.unitconverter.volume.ImperialCup;
+import com.dawit.unitconverter.volume.ImperialGallon;
+import com.dawit.unitconverter.volume.ImperialQuart;
+import com.dawit.unitconverter.volume.ImperialPint;
+import com.dawit.unitconverter.volume.ImperialTableSpoon;
+import com.dawit.unitconverter.volume.ImperialTeaSpoon;
+import com.dawit.unitconverter.volume.Liter;
+import com.dawit.unitconverter.volume.MilliLiter;
+import com.dawit.unitconverter.volume.UsLegalCup;
+import com.dawit.unitconverter.volume.UsLiquidGallon;
+import com.dawit.unitconverter.volume.UsLiquidPint;
+import com.dawit.unitconverter.volume.UsLiquidQuart;
+import com.dawit.unitconverter.volume.UsTableSpoon;
+import com.dawit.unitconverter.volume.UsTeaSpoon;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -317,7 +433,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 } catch (NumberFormatException ex) {
-                    Toast.makeText(MainActivity.this, ex.toString(), Toast.LENGTH_SHORT).show();
+                    textInputEditTextUnitTo.setText("");
+//                    Toast.makeText(MainActivity.this, ex.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -326,7 +443,6 @@ public class MainActivity extends AppCompatActivity {
         textInputEditTextUnitTo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -347,7 +463,8 @@ public class MainActivity extends AppCompatActivity {
                         textInputEditTextUnitFrom.setText(String.format("%.2f", outputUnit));
                     }
                 } catch (NumberFormatException ex) {
-                    Toast.makeText(MainActivity.this, ex.toString(), Toast.LENGTH_SHORT).show();
+                    textInputEditTextUnitFrom.setText("");
+//                    Toast.makeText(MainActivity.this, ex.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -355,148 +472,148 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private IConversion figureOutUnit(String label){
-        switch (label){
-
+        switch (label.trim()){
+//Area
             case "Square Kilometer":
-                break;
-            case "Square Meter ":
-                break;
+                return new SquareKilometer();
+            case "Square Meter":
+                return new SquareMeter();
             case "Square Mile":
-                break;
+                return new SquareMile();
             case "Square Yard":
-                break;
+                return new SquareYard();
             case "Square Foot":
-                break;
+                return new SquareFoot();
             case "Square Inch":
-                break;
+                return new SquareInch();
             case "Hectare":
-                break;
+                return new Hectare();
             case "Acre":
-                break;
-
-            case "Bit per Second ":
-                break;
+                return new Acre();
+//Data Transfer rate
+            case "Bit per Second":
+                return new BitPerSecond();
             case "Kilobit per second":
-                break;
+                return new KilobitPerSecond();
             case "Kilobyte per second":
-                break;
+                return new KilobytePerSecond();
             case "Kibibit per second":
-                break;
+                return new KibibitPerSecond();
             case "Megabit per second":
-                break;
+                return new MegabitPersecond();
             case "Megabyte per second":
-                break;
+                return new MegabytePerSecond();
             case "Mebibit per second":
-                break;
+                return new MebibitPerSecond();
             case "Gigabit per second":
-                break;
+                return new GigabitPerSecond();
             case "Gigabyte per second":
-                break;
+                return new GigabytePerSecond();
             case "Gebibit per second":
-                break;
+                return new GebibitPerSecond();
             case "Terabit per second":
-                break;
+                return new TerabitPerSecond();
             case "Terabyte per second":
-                break;
+                return new TerabytePerSecond();
             case "Tebibit per second":
-                break;
-
-            case "Bit ":
-                break;
+                return new TebibitPerSecond();
+//Digital Storage
+            case "Bit":
+                return new Bit();
             case "Kilobit":
-                break;
+                return new Kilobit();
             case "Kibibit":
-                break;
+                return new Kibibit();
             case "Megabit":
-                break;
+                return new Megabit();
             case "Mebibit":
-                break;
+                return new Mebibit();
             case "Gigabit":
-                break;
+                return new Gigabit();
             case "Gibibit":
-                break;
+                return new Gibibit();
             case "Terabit":
-                break;
+                return new Terabit();
             case "Petabit":
-                break;
+                return new Petabit();
             case "Pebibit":
-                break;
+                return new Pebibit();
             case "Byte":
-                break;
+                return new com.dawit.unitconverter.digital_storage.Byte();
             case "Kilobyte":
-                break;
+                return new Kilobyte();
             case "Kibibyte":
-                break;
+                return new Kibibyte();
             case "Megabyte":
-                break;
+                return new Megabyte();
             case "Mebibyte":
-                break;
+                return new Mebibyte();
             case "Gigabyte":
-                break;
+                return new Gigabyte();
             case "Gibibyte":
-                break;
+                return new Gibibyte();
             case "Terabyte":
-                break;
+                return new Terabyte();
             case "Tebibyte":
-                break;
+                return new Tebibyte();
             case "Petabyte":
-                break;
+                return new Petabyte();
             case "Pebibyte":
-                break;
-
-            case "Joule ":
-                break;
+                return new Pebibyte();
+//Energy
+            case "Joule":
+                return new Joule();
             case "Kilojoule":
-                break;
+                return new Kilojoule();
             case "Gram calorie":
-                break;
+                return new GramCalorie();
             case "Kilo calorie":
-                break;
+                return new KiloCalorie();
             case "Watt hour":
-                break;
+                return new WattHour();
             case "Kilowatt hour":
-                break;
+                return new KiloWattHour();
             case "Electronvolt":
-                break;
+                return new ElectronVolt();
             case "British thermal unit":
-                break;
+                return new BritishTermalUnit();
             case "US therm":
-                break;
+                return new UsTherm();
             case "Foot-pound":
-                break;
-
-            case "Hertz ":
-                break;
+                return new FootPound();
+//Frequency
+            case "Hertz":
+                return new Hertz();
             case "kilohertz":
-                break;
+                return new KiloHertz();
             case "Megahertz":
-                break;
+                return new MegaHertz();
             case "Gigahertz":
-                break;
-
+                return new GigaHertz();
+//Fuel Economy
             case "Miles per gallon":
-                break;
+                return new MilesPerGallon();
             case "Miles per gallon (Imperial)":
-                break;
+                return new MilesPerGallon_Imperial();
             case "Kilometer per liter":
-                break;
-            case "Liter per 100 kilometer ":
-                break;
+                return new KiloMeterPerLiter();
+            case "Liter per 100 kilometer":
+                return new LiterPer100Kilometer();
 /**
  * Length Case checking
  */
             case "Kilometre":
                 return new Kilometer();
             case "Meter ":
-                return null;
+                return new Meter();
             case "Centimeter":
                 return new Centimeter();
             case "Millimetre":
-                return new Millimetre();
+                return new Milimeter();
             case "Micrometre":
-                return new Micrometre();
+                return new Micrometer();
             case "Nanometre":
-                return new Nanometre();
+                return new Nanometer();
             case "Mile":
                 return new Mile();
             case "Yard":
@@ -511,131 +628,131 @@ public class MainActivity extends AppCompatActivity {
  * Mass case checking
  */
             case "Tonne":
-                break;
+                return new Tonne();
             case "Kilogram":
-                break;
-            case "Gram ":
-                break;
+                return new KiloGram();
+            case "Gram":
+                return new Gram();
             case "Milligram":
-                break;
+                return new Miligram();
             case "Micrograms":
-                break;
+                return new Microgram();
             case "Imperial ton":
-                break;
+                return new ImperialTon();
             case "US ton":
-                break;
+                return new UsTon();
             case "Stone":
-                break;
+                return new Stone();
             case "Pound":
-                break;
+                return new Pound();
             case "Ounce":
-                break;
-
+                return new Ounce();
+//Plane Angle
             case "Arcsecond":
-                break;
+                return new Arcsecond();
             case "Degree":
-                break;
+                return new Degree();
             case "Gradian":
-                break;
+                return new Gradian();
             case "Milliradian":
-                break;
+                return new MilliRadian();
             case "Minute of arc":
-                break;
-            case "Radian ":
-                break;
-
+                return new MinuteOfArc();
+            case "Radian":
+                return new Radian();
+//Pressure
             case "Bar":
-                break;
-            case "Pascal ":
-                break;
+                return new Bar();
+            case "Pascal":
+                return new Pascal();
             case "Pound per square inch":
-                break;
+                return new PoundPerSquareInch();
             case "Standard atmosphere":
-                break;
+                return new StandardAtmosphere();
             case "Torr":
-                break;
-
+                return new Torr();
+//Speed
             case "Mile per hour":
-                break;
+                return new MilePerHour();
             case "Foot per second":
-                break;
-            case "Meter per second ":
-                break;
+                return new FootPerSecond();
+            case "Meter per second":
+                return new MeterPerSecond();
             case "Kilometer per hour":
-                break;
+                return new KilometerPerHour();
             case "Knot":
-                break;
-
-            case "Degree Celsius ":
-                break;
+                return new Knot();
+//Tempreture
+            case "Degree Celsius":
+                return new DegreeCelsius();
             case "Fahrenheit":
-                break;
+                return new Fahrenhiet();
             case "Kelvin":
-                break;
-
+                return new Kelvin();
+//Time
             case "Nanosecond":
-                break;
+                return new NanoSecond();
             case "Microsecond":
-                break;
+                return new MicroSecond();
             case "Millisecond":
-                break;
-            case "Second ":
-                break;
+                return new MilliSecond();
+            case "Second":
+                return new Second();
             case "Minute":
-                break;
+                return new Minute();
             case "Hour":
-                break;
+                return new Hour();
             case "Day":
-                break;
+                return new Day();
             case "Week":
-                break;
+                return new Week();
             case "Month":
-                break;
+                return new Month();
             case "Calendar Year":
-                break;
+                return new CalenderYear();
             case "Decade":
-                break;
+                return new Decade();
             case "Century":
-                break;
-
+                return new Century();
+//Volume
             case "US liquid gallon":
-                break;
+                return new UsLiquidGallon();
             case "US liquid quart":
-                break;
+                return new UsLiquidQuart();
             case "US liquid pint":
-                break;
+                return new UsLiquidPint();
             case "US legal cup":
-                break;
+                return new UsLegalCup();
             case "Fluid ounce":
-                break;
+                return new FluidOunce();
             case "US tablespoon":
-                break;
+                return new UsTableSpoon();
             case "US teaspoon":
-                break;
-            case "Cubic meter ":
-                break;
+                return new UsTeaSpoon();
+            case "Cubic meter":
+                return new CubicMeter();
             case "Liter":
-                break;
+                return new Liter();
             case "Milliliter":
-                break;
+                return new MilliLiter();
             case "Imperial gallon":
-                break;
+                return new ImperialGallon();
             case "Imperial quart":
-                break;
+                return new ImperialQuart();
             case "Imperial pint":
-                break;
+                return new ImperialPint();
             case "Imperial cup":
-                break;
+                return new ImperialCup();
             case "Imp. fluid ounce":
-                break;
+                return new Imp_FluidOunce();
             case "Imperial tablespoon":
-                break;
+                return new ImperialTableSpoon();
             case "Imperial teaspoon":
-                break;
+                return new ImperialTeaSpoon();
             case "Cubic foot":
-                break;
+                return new CubicFoot();
             case "Cubic Inch":
-                break;
+                return new CubicInch();
         }
 
         return null;
