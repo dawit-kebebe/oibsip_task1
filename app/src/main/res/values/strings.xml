@@ -12,6 +12,7 @@
     <string name="unit_to_description">To unit</string>
     <string name="convert_btn_description">Convert Button</string>
     <string name="input_area_initial_val">00.0</string>
+    <string name="warning_desc">Some values are rather an approximation of the exact value than exact value.</string>
 
     <string-array name="category">
         <item>Area</item>

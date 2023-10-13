@@ -5,11 +5,13 @@ plugins {
 android {
     namespace 'com.dawit.unitconverter'
     compileSdk 33
+    //33
 
     defaultConfig {
         applicationId "com.dawit.unitconverter"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
+//        32
         versionCode 1
         versionName "1.0"
 
